@@ -1,7 +1,0 @@
-- 2theta zero
-- number of points for the G(r)
-- finire CdSe (effetto noise su qumax)
-- effetto IRF e diam max osservabile
-- noise a vari livelli
-- differenza tra diversi setup
-- microstruttura
