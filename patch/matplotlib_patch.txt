@@ -1,0 +1,15 @@
+###########
+# pdfgetx3 patch for matplotlib issues
+# copy-paste the code below in an interactive session
+
+import matplotlib
+from packaging import version
+if version.parse(matplotlib.__version__) >= version.parse("3.6"):
+    try:
+        from matplotlib.backends.backend_qt import FigureCanvasQTAgg
+    except Exception:
+        from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
+    def _set_window_title(self, title):
+        if hasattr(self, "manager") and self.manager is not None:
+            self.manager.set_window_title(title)
+    FigureCanvasQTAgg.set_window_title = _set_window_title
